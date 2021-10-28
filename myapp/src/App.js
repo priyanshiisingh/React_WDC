@@ -1,6 +1,12 @@
-const secret = "i'm a secret";
+import Navbar from "./Navbar";
 
-// console.log(secret);
-// module.exports = secret;
+const App = () => {
+  return (
+    <div className="App">
+      <Navbar />
+      lorem ipsum
+    </div>
+  );
+};
 
-export default secret;
+export default App;
