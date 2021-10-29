@@ -1,6 +1,9 @@
-const val = 'asf'
+const secret = "i'm a secret";
+// console.log(secret)
+export const age = 10;
 
+export const printname = (name) => {
+  console.log(`hello ${name}`);
+};
 
-export const data = "I'm the data"
-
-export default val
+export default secret;

@@ -1,4 +1,7 @@
-import val, { data } from './app'
+import secret, { age, printname } from "./app.js";
 
-console.log(val)
-console.log(data)
+printname("prii");
+
+console.log(age);
+
+console.log(secret);
