@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":["console","log","age","secret"],"mappings":";;AAAA;;;;;;AAEA,oBAAU,MAAV;;AAEAA,QAAQC,GAAR,CAAYC,QAAZ;;AAEAF,QAAQC,GAAR,CAAYE,aAAZ","file":"index.js","sourcesContent":["import secret, { age, printname } from \"./app.js\";\n\nprintname(\"prii\");\n\nconsole.log(age);\n\nconsole.log(secret);\n"]}
