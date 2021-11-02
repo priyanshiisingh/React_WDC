@@ -1,82 +1,36 @@
-// import { useState } from "react";
-
-// const Content = () => {
-//   const [items, setItems] = useState([]);
-//   const [value, setValue] = useState("");
-
-//   const handleSubmit = () => {
-//     // let arr = items;
-//     // arr.push(value);
-//     setItems((prev) => [...prev, value]);
-//   };
-
-//   const handleInput = (e) => {
-//     setValue(e.target.value);
-//     // console.log("value changed");
-//   };
-
-//   console.log(value);
-//   return (
-//     <>
-//       <h2>Todo</h2>
-//       <form>
-//         <input onChange={handleInput} type="text" />
-//         <button onClick={handleSubmit} type="submit">
-//           Add
-//         </button>
-//       </form>
-//       <ul>
-//         {items.map((item) => (
-//           <li>{item}</li>
-//         ))}
-//       </ul>
-//     </>
-//   );
-// };
-
-// export default Content;
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Content = () => {
-  const [items, setItems] = useState([]);
-  const [value, setValue] = useState("");
+  const [counter, setCounter] = useState(0);
+  const [content, setContent] = useState([]);
 
-  const handleSubmit = () => {
-    setItems((prev) => [...prev, value]);
-    setValue("");
+  const APICall = async () => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/photos");
+    const data = await res.json();
+    setContent(data);
   };
 
-  const handleInput = (e) => {
-    setValue(e.target.value);
-  };
-
-  const handleDelete = (item) => {
-    console.log(item);
-    setItems((prev) => prev.filter((i) => i !== item));
-  };
+  useEffect(() => {
+    APICall();
+  }, [counter]);
 
   return (
-    <>
-      <h2>Todo</h2>
-      <input value={value} onChange={handleInput} type="text" />
-      <button onClick={handleSubmit} type="submit">
-        Add
+    <div>
+      <h2>{counter}</h2>
+      <button
+        onClick={() => {
+          setCounter((prev) => prev + 1);
+        }}>
+        Click Me{" "}
       </button>
       <ul>
-        {items.map((item) => (
-          <li>
-            {item}{" "}
-            <button
-              onClick={() => {
-                handleDelete(item);
-              }}>
-              delete
-            </button>
+        {content.map((item) => (
+          <li style={{ margin: "10px", border: "3px solid black" }}>
+            {item.title}
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
