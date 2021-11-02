@@ -51,6 +51,11 @@ const Content = () => {
     setValue(e.target.value);
   };
 
+  const handleDelete = (item) => {
+    console.log(item);
+    setItems((prev) => prev.filter((i) => i !== item));
+  };
+
   return (
     <>
       <h2>Todo</h2>
@@ -60,7 +65,15 @@ const Content = () => {
       </button>
       <ul>
         {items.map((item) => (
-          <li>{item}</li>
+          <li>
+            {item}{" "}
+            <button
+              onClick={() => {
+                handleDelete(item);
+              }}>
+              delete
+            </button>
+          </li>
         ))}
       </ul>
     </>
