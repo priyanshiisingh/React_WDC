@@ -1,49 +1,59 @@
-// import ListItem from "./listitem";
-// import { useState } from "react";
+import ListItem from "./listitem";
+import { useState } from "react";
 
-// const Content = () => {
-//   // request the API for data
-//   // let counter = 0
-//   const counter = useState(0);
-//   console.log(counter);
+const Content = () => {
+  // request the API for data
+  // let counter = 0
+  let [counter, setCounter] = useState(0);
+  let [items, setitems] = useState([]);
 
-//   return (
-//     <div className="container">
-//       {/* <h2>{counter}</h2>
-//       <button
-//         onClick={() => {
-//           console.log(counter);
-//           counter = counter + 1;
-//         }}>
-//         ClickMe
-//       </button> */}
-//     </div>
-//   );
-// };
+  // console.log(counter);
+  // console.log(mysteryfunc);
 
-// export default Content;
+  console.log("re rendering");
 
-import React from "react";
+  return (
+    <div className="container">
+      <h2>{counter}</h2>
+      <button
+        onClick={() => {
+          // console.log(counter);
+          // counter = counter + 1;
+          setCounter((previousValue) => {
+            console.log(previousValue);
+            return previousValue + 1;
+          });
+        }}>
+        ClickMe
+      </button>
+    </div>
+  );
+};
 
-class ClassComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0,
-    };
-  }
+export default Content;
 
-  render() {
-    return (
-      <div className="container">
-        {/* <h2>{counter}</h2>
-            <button onClick={() => {
-                console.log(counter)
-                counter = counter + 1
-            }} >ClickMe</button> */}
-      </div>
-    );
-  }
-}
+// import React from "react";
 
-export default ClassComponent;
+// class ClassComponent extends React.Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       count: 0,
+//     };
+//   }
+
+//   render() {
+//     return (
+//       <div className="container">
+//         {/* <h2>{counter}</h2>
+//             <button onClick={() => {
+//                 console.log(counter)
+//                 counter = counter + 1
+//             }} >ClickMe</button> */}
+//         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, cum?
+//       </div>
+//     );
+//   }
+// }
+
+// export default ClassComponent;
