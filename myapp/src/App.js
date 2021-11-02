@@ -5,9 +5,9 @@ import Content from "./components/content";
 const App = () => {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <Content />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
