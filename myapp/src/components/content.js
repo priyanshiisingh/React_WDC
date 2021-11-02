@@ -1,59 +1,70 @@
-import ListItem from "./listitem";
+// import { useState } from "react";
+
+// const Content = () => {
+//   const [items, setItems] = useState([]);
+//   const [value, setValue] = useState("");
+
+//   const handleSubmit = () => {
+//     // let arr = items;
+//     // arr.push(value);
+//     setItems((prev) => [...prev, value]);
+//   };
+
+//   const handleInput = (e) => {
+//     setValue(e.target.value);
+//     // console.log("value changed");
+//   };
+
+//   console.log(value);
+//   return (
+//     <>
+//       <h2>Todo</h2>
+//       <form>
+//         <input onChange={handleInput} type="text" />
+//         <button onClick={handleSubmit} type="submit">
+//           Add
+//         </button>
+//       </form>
+//       <ul>
+//         {items.map((item) => (
+//           <li>{item}</li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// };
+
+// export default Content;
+
 import { useState } from "react";
 
 const Content = () => {
-  // request the API for data
-  // let counter = 0
-  let [counter, setCounter] = useState(0);
-  let [items, setitems] = useState([]);
+  const [items, setItems] = useState([]);
+  const [value, setValue] = useState("");
 
-  // console.log(counter);
-  // console.log(mysteryfunc);
+  const handleSubmit = () => {
+    setItems((prev) => [...prev, value]);
+    setValue("");
+  };
 
-  console.log("re rendering");
+  const handleInput = (e) => {
+    setValue(e.target.value);
+  };
 
   return (
-    <div className="container">
-      <h2>{counter}</h2>
-      <button
-        onClick={() => {
-          // console.log(counter);
-          // counter = counter + 1;
-          setCounter((previousValue) => {
-            console.log(previousValue);
-            return previousValue + 1;
-          });
-        }}>
-        ClickMe
+    <>
+      <h2>Todo</h2>
+      <input value={value} onChange={handleInput} type="text" />
+      <button onClick={handleSubmit} type="submit">
+        Add
       </button>
-    </div>
+      <ul>
+        {items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </>
   );
 };
 
 export default Content;
-
-// import React from "react";
-
-// class ClassComponent extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       count: 0,
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <div className="container">
-//         {/* <h2>{counter}</h2>
-//             <button onClick={() => {
-//                 console.log(counter)
-//                 counter = counter + 1
-//             }} >ClickMe</button> */}
-//         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, cum?
-//       </div>
-//     );
-//   }
-// }
-
-// export default ClassComponent;
