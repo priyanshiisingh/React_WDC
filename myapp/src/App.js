@@ -1,13 +1,18 @@
 import Navbar from "./layouts/navbar";
 import Footer from "./layouts/footer";
 import Content from "./components/content";
+import { useState } from "react";
 import Description from "./components/Description";
+import One from "./components/One";
+import Two from "./components/Two";
 
 const App = () => {
-  console.log(Description);
+  const [data, setData] = useState({ password: "abcd" }, { password: "1234" });
+
   return (
     <div className="App">
-      <Description heading={"heading"} />
+      <One data={data} />
+      <Two />
     </div>
   );
 };
