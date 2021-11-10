@@ -1,6 +1,3 @@
-import Navbar from "./layouts/navbar";
-import Footer from "./layouts/footer";
-import Content from "./components/content";
 import { useState } from "react";
 import Description from "./components/Description";
 import One from "./components/One";
