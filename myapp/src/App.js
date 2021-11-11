@@ -1,12 +1,15 @@
 import { useState } from "react";
-import Description from "./components/Description";
-import One from "./components/One";
-import Two from "./components/Two";
+import { useSelector } from "react-redux";
+import List from "./components/List";
+import AddItem from "./components/AddItem";
+
 const App = () => {
+  const items = useSelector((state) => state);
+  console.log(items);
   return (
     <div className="App">
-      <One />
-      <Two />
+      <AddItem />
+      <List />
     </div>
   );
 };

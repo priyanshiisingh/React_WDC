@@ -4,13 +4,16 @@
 //   { password: "somehting" },
 // ];
 
-const Reducer = (state = {}, action) => {
+const Reducer = (state = [], action) => {
   const { type, payload } = action;
   switch (type) {
-    case "ADD_PRODUCT":
+    case "DELETE_ITEM":
       console.log(action);
-      const { products } = state;
-      return { ...state, products: [...products, payload] };
+      return state.filter((item) => item.id !== payload);
+
+    case "ADD_ITEM":
+      console.log(action);
+      return [...state, payload];
     default:
       return state;
   }
