@@ -1,13 +1,16 @@
-const initstate = [
-  { password: "somehting" },
-  { password: "somehting" },
-  { password: "somehting" },
-];
+// const initstate = [
+//   { password: "somehting" },
+//   { password: "somehting" },
+//   { password: "somehting" },
+// ];
 
-const Reducer = (state = [initstate], action) => {
-  switch (action.type) {
-    case "ADD_DATA":
-      return [...state, action.payload];
+const Reducer = (state = {}, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case "ADD_PRODUCT":
+      console.log(action);
+      const { products } = state;
+      return { ...state, products: [...products, payload] };
     default:
       return state;
   }
