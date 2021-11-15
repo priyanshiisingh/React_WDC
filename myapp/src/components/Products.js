@@ -9,7 +9,7 @@ const Products = () => {
       <h2>Products</h2>
       {products.map((product) => (
         <li>
-          <a href={product.name}>{product.name}</a>
+          <a href={`products/${product.name}`}>{product.name}</a>
         </li>
       ))}
     </div>
