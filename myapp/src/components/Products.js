@@ -1,11 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Products = () => {
+  const products = useSelector((state) => state);
+
   return (
     <div>
       <h2>Products</h2>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illo
-      neque id odit blanditiis nisi quibusdam enim quisquam dolorum praesentium.
+      {products.map((product) => (
+        <li>
+          <a href={product.name}>{product.name}</a>
+        </li>
+      ))}
     </div>
   );
 };

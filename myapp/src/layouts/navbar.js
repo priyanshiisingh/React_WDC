@@ -1,10 +1,13 @@
 const Navbar = () => {
   return (
-    <nav>
-      <a href="">Home</a>
-      <a href="">About</a>
-      <a href="">Contact</a>
-    </nav>
+    <ul>
+      <li>
+        <a href="/">Products</a>{" "}
+      </li>
+      <li>
+        <a href="/details">Details</a>{" "}
+      </li>
+    </ul>
   );
 };
 
